@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const passport = require("passport");
 const session = require("express-session");
+
+//Model
 let db = require("./models");
 
 //Setup app
@@ -27,10 +29,13 @@ app.use(session({ secret: 'the login creation is nigh',resave: true, saveUniniti
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+//Passport Strategy
+require('./config/passport/passport.js')(passport, db.user);
 
 // Routes
 // =============================================================
-require("./routes/auth_routes.js")(app);
+require("./routes/auth_routes.js")(app,passport);
+
 
 // Start App
 // =============================================================

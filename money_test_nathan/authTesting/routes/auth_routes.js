@@ -1,4 +1,4 @@
-module.exports = function(app){
+module.exports = function(app, passport){
     //Respond with pages
     app.get('/signup', function(req,res) {
         res.render('signup');
@@ -6,4 +6,10 @@ module.exports = function(app){
     app.get('/signin', function(req,res) {
         res.render('signin');
     });
+
+    app.post('/signup', passport.authenticate('local-signup', {
+            successRedirect: '/dashboard',
+            failureRedirect: '/signup'
+        } 
+    ));
 }
