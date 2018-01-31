@@ -1,0 +1,23 @@
+body{
+    font-family: 'PT Sans', sans-serif;
+    background: #F5F7FA;
+}
+#logo{
+    display: inline-block;
+}
+.navbar-default .navbar-nav>li>a{
+    color: white;
+}
+#grad{
+    background: linear-gradient(to bottom right, #10a30b, #099304);
+}
+.price_in{
+    background: none !important;
+    border: none !important;
+    color: #2c2e2f !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-overflow: clip !important;
+    outline: 0px !important;
+    letter-spacing: normal !important;
+}
