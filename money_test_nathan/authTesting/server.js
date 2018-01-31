@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const passport = require("passport");
 const session = require("express-session");
+let db = require("./models");
 
 //Setup app
 // =============================================================
@@ -32,6 +33,9 @@ require("./routes/auth_routes.js")(app);
 
 // Start App
 // =============================================================
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+db.sequelize.sync().then(function(){
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });
+
