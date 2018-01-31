@@ -12,6 +12,7 @@ let db = require("./models");
 let app = express();
 let PORT = process.env.PORT || 8080;
 
+//Setup body parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
