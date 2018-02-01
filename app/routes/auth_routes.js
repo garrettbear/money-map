@@ -1,8 +1,9 @@
 module.exports = function(app, passport){
     //Respond with pages
-    app.get('/home', function(req,res) {
-      res.render('signin');
+    app.get('/', function(req,res) {
+      res.render('index');
   });
+
     app.get('/signup', function(req,res) {
         res.render('signup');
     });
