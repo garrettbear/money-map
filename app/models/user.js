@@ -21,7 +21,13 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
     });
- 
+    User.associate = function(models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        User.hasMany(models.MoneyData, {
+          onDelete: "cascade"
+        });
+      };
     return User;
  
 }
