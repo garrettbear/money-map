@@ -1,0 +1,227 @@
+
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo teal-text text-lighten-2">Money Rocket</a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#login-account-card">Log In</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li>
+          <a href="#login-account-card">Log In</a>
+        </li>
+      </ul>
+      <a href="#login-account-card" data-target="nav-mobile" class="sidenav-trigger">
+        <i class="material-icons">Menu</i>
+      </a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section">
+      <div class="container">
+
+
+        <h1 class="header center teal-text text-lighten-2">Money Rocket</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">An application to help promote financial self control.</h5>
+        </div>
+        <div class="row center">
+          <a href="#login-account-card" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="background1.jpg" alt="Unsplashed background img 1">
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <br>
+        <br>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text">
+              <i class="material-icons">flash_on</i>
+            </h2>
+            <h5 class="center">Quick Analysis</h5>
+
+            <p class="light">Lighting fast data results providing you with visually stunning charts of your expenses. A better way to understand where you are spending all your money.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text">
+              <i class="material-icons">group</i>
+            </h2>
+            <h5 class="center">Designed For You</h5>
+
+            <p class="light">Simplicity is what we strive for to help provide a seamless user-experience without the headache of learning
+              a new platform.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text">
+              <i class="material-icons">settings</i>
+            </h2>
+            <h5 class="center">Built Secure</h5>
+
+            <p class="light">Your data is important and is meant for your eyes only, which is why we have the best security team on staff 24/7.</p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+
+    </div>
+    <div class="parallax">
+      <img src="background2.jpg" alt="Unsplashed background img 2">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <br>
+      <div class="container login-account-card" id="login-account-card">
+        <div class="row">
+          <div class="s12 l10 offset-l1 col">
+            <div class="card">
+              <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab">
+                    <a class="" href="#login-tab">LOG IN</a>
+                  </li>
+                  <li class="tab">
+                    <a class="active" href="#create-account-tab">CREATE ACCOUNT</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-content">
+                <div id="login-tab">
+                  <div class="card-content">
+                    <div class="row">
+                      <h4 class="center align">LOG IN</h4>
+                      <!-- LOGIN FORM START id="login-btn" -->
+                      <form action="login" class="s12 col">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="login-email" type="email" class="validate">
+                            <label for="login-email">Email</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="password-login" type="password" class="validate">
+                            <label for="password-login">Password</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="submit" id="login-btn" class="submit btn-large" value="Submit">
+                          </div>
+                        </div>
+                      </form>
+                      <!-- LOGIN FORM END -->
+                    </div>
+                  </div>
+                </div>
+                <div id="create-account-tab">
+                  <div class="card-content">
+                    <div class="row">
+                      <h4 class="center-align">CREATE ACCOUNT</h4>
+                      <form action="create-account" class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                          </div>
+                          <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                          </div>
+                          <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                          </div>
+                          <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                          </div>
+                          <div class="input-field col s12">
+                            <input id="password2" type="password" class="validate">
+                            <label for="password2">Re-Type Password</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Make sure both passwords match.</span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="submit" id="create-account-btn" class="submit btn-large" value="Submit">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Spend Your Money Wisely</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="background3.jpg" alt="Unsplashed background img 3">
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright black lighter-1">
+      <div class="container">
+        <div class="row">
+          <br>
+          <div class="s12 m6 col">
+            <h5>Rocket Money Project &reg; 2018</h5>
+          </div>
+          <div class="s12 m2 col">
+            <h5>Garrett</h5>
+          </div>
+          <div class="s12 m2 col">
+            <h5>Nathan</h5>
+          </div>
+          <div class="s12 m2 col">
+            <h5>Iceman</h5>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </footer>
