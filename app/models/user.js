@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
  
-    var User = sequelize.define('user', {
+    var User = sequelize.define('User', {
  
         id: {
             autoIncrement: true,
@@ -21,7 +21,12 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
     });
- 
+    User.associate = function(models) {
+        
+        User.hasMany(models.MoneyData, {
+            onDelete: "cascade"
+          });
+    };
     return User;
  
 }

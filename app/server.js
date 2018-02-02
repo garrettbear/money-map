@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 //Passport Strategy
-require('./config/passport/passport.js')(passport, db.user);
+require('./config/passport/passport.js')(passport, db.User);
 
 // Routes
 // =============================================================
