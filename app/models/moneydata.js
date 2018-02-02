@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-    var MoneyData = sequelize.define('moneydata',{
+    var MoneyData = sequelize.define('MoneyData',{
         input_id:{
             autoIncrement: true,
             primaryKey: true,
@@ -19,15 +19,16 @@ module.exports = function(sequelize, Sequelize) {
             validate: {
                 len: [1, 140]
             }
-        },
+        }
     });
     MoneyData.associate = function(models) {
         // We're saying that a Post should belong to an Author
         // A Post can't be created without an Author due to the foreign key constraint
+        
         MoneyData.belongsTo(models.User, {
-          foreignKey: {
-            allowNull: false
-          }
+            foreignKey: {
+              allowNull: false
+            }
         });
     };
     return MoneyData;
