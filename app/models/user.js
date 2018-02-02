@@ -16,6 +16,18 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
+        first_name: {
+            type: Sequelize.STRING,
+            validate:{
+                len: [1,140]
+            }
+        },
+        last_name:{
+            type: Sequelize.STRING,
+            validate:{
+                len: [1,140]
+            }
+        },
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
