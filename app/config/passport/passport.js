@@ -31,7 +31,7 @@ module.exports = function(passport, user) {
                 where: {username: username}
             }).then(function(user) {
                 //Add user to database.
-
+                
                 //Checks to make sure doesn't already exist. 
                 if (user){            
                     return done(null, false, {
@@ -44,7 +44,9 @@ module.exports = function(passport, user) {
                     let data =             
                         {
                             username: username,
-                            password: bCrypt.hashSync(password, bCrypt.genSaltSync(8), null) //Hashes the password using bCrypt.                     
+                            password: bCrypt.hashSync(password, bCrypt.genSaltSync(8), null),//Hashes the password using bCrypt.   
+                            first_name: req.body.fname,
+                            last_name: req.body.lname                 
                         };
                     
                     //Pass the data into sequelize. 
