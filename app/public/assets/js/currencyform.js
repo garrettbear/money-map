@@ -26,9 +26,8 @@ $(document).ready(function () {
     }
   }
   $(".price_in").keypress(e => {
-    console.log(e.which);
     e.preventDefault();
-    if (e.which <= 57 && e.which >= 48 || e.which <= 105 && e.which >= 96) {
+    if (e.which <= 57 && e.which >= 48) {
       dollarInputs.push(e.originalEvent.key);
       parseInput();
     }
