@@ -1,13 +1,6 @@
 let db = require("../models");
 
 module.exports = function (app, passport) {
-    app.get('/dashboard', function(req,res,next){
-        if (req.isAuthenticated()) return next();
-        res.redirect('/signin');
-      }, function(req, res){
-        // console.log(req.user.username);
-        res.render('dashboard');
-      });
     app.get('/api/userdata', function(req,res,next){
         if (req.isAuthenticated()) return next();
         res.redirect('/signin');
