@@ -16,6 +16,9 @@ var data_V1 = [{
   "Description": "Aenean tellus felis, finibus eget placerat nec, ultrices vel elit. Morbi viverra mi ac ornare euismod. Quisque ultrices id nibh aliquam bibendum. Morbi id tortor non magna dictum suscipit. Nunc dolor metus, aliquam vitae felis id, euismod vulputate metus."
 }];
 
+$.get( "/api/userdata", function( data ) {
+  console.log(data);
+});
 var width = parseInt(d3.select('#pieChart').style('width'), 10);
 var height = width;
 var radius = (Math.min(width, height) - 15) / 2;

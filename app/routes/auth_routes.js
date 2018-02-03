@@ -4,12 +4,6 @@ module.exports = function (app, passport) {
     res.render('index');
   });
 
-  app.get('/signup', function (req, res) {
-    res.render('signup');
-  });
-  app.get('/signin', function (req, res) {
-    res.render('signin');
-  });
   app.get('/logout', function(req,res){
     req.session.destroy(function(err){
         res.redirect('/');
