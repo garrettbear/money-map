@@ -117,7 +117,8 @@
               </div>
               <div class="card-content">
                 <div id="login-tab">
-                  <div class="card-content">
+                  {{> signin}}
+                  {{!-- <div class="card-content">
                     <div class="row">
                       <h4 class="center align">LOG IN</h4>
                       <!-- LOGIN FORM START id="login-btn" -->
@@ -142,10 +143,11 @@
                       </form>
                       <!-- LOGIN FORM END -->
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
                 <div id="create-account-tab">
-                  <div class="card-content">
+                  {{> signup}}
+                  {{!-- <div class="card-content">
                     <div class="row">
                       <h4 class="center-align">CREATE ACCOUNT</h4>
                       <form action="create-account" class="col s12">
@@ -179,7 +181,7 @@
                         </div>
                       </form>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
