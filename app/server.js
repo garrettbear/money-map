@@ -35,6 +35,7 @@ require('./config/passport/passport.js')(passport, db.User);
 // Routes
 // =============================================================
 require("./routes/auth_routes.js")(app,passport);
+require("./routes/api_routes.js")(app,passport);
 
 
 // Start App
