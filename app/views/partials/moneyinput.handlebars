@@ -12,7 +12,7 @@
       <h5 class="center-align">Submit An Expense</h5>
       <br>
       <div class="row">
-        <form class="s12 col" action="submit-item">
+        <form class="s12 col" action="submit-item" id ="submit-item" name="submit-item" method = "post">
           <div class="row">
             <form class="col s12">
               <!-- price id="currency-field" -->
@@ -49,7 +49,7 @@
               <!-- comment id="item-comment" -->
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea id="item-comment" class="materialize-textarea" maxlength="100"></textarea>
+                  <textarea id="item_comment" name="item_comment" class="materialize-textarea" maxlength="100"></textarea>
                   <label for="textarea1">Comment</label>
                   <span class="helper-text" data-error="wrong" data-success="right">Leave a note about your expense. // Max Characters: 100</span>
                 </div>
@@ -69,4 +69,7 @@
 <!--  <div class="modal-footer">
     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
   </div> -->
+  <script>
+
+  </script>
 </div>

@@ -4,10 +4,6 @@ module.exports = function (app, passport) {
     res.render('index');
   });
 
-  app.get('/dashboard', function (req, res) {
-    res.render('dashboard');
-  });
-
   app.get('/signup', function (req, res) {
     res.render('signup');
   });
@@ -20,6 +16,7 @@ module.exports = function (app, passport) {
     });
   });
 
+  
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/dashboard',
     failureRedirect: '/signup'
