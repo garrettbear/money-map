@@ -23,7 +23,7 @@ $.get( "/api/userdata", function( userData ) {
   for(let i = 0; i< userData.length; i++){
     userData[i].price = parseFloat(userData[i].price);
   }
-  console.log(JSON.stringify(userData));
+  console.log((userData));
 
   //Rollups all data of same category
   var rollupData = d3.nest()
@@ -90,9 +90,12 @@ $.get( "/api/userdata", function( userData ) {
     .style("fill", function(d) {
       return color(d.data.category);
     })
+
+    //When one of the sections on the graph is clicked.
     .on("click", function(d) {
       console.log("clicked!");
       console.log(d);
+      // D3 Table target .d3table ******************************************************
       $('.text-container').hide();
       $('#segmentTitle').replaceWith('<h1 id="segmentTitle">' + d.data.category + ": " + d.data.price + '</h1>');
       $('#')
@@ -121,4 +124,3 @@ $.get( "/api/userdata", function( userData ) {
 
 /*var color = d3.scale.category20();
 color.domain(type(data))*/
-
