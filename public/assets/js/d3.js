@@ -38,6 +38,10 @@ $.get( "/api/userdata", function( userData ) {
     .map(function(d){
       return { category: d.key, price: d.values};
   });
+  //Reorders rollup so that prices are appropriately shown. 
+  rollupData.sort(function(x, y){
+    return (d3.ascending(x.price, y.price));
+  })
 
 
   //Create Pie graph
@@ -104,17 +108,14 @@ $.get( "/api/userdata", function( userData ) {
       $('#segmentTitle').replaceWith('<h1 id="segmentTitle">' + d.data.category + ": " + d.data.price + '</h1>');
       $('#')
       $('.text-container').fadeIn(400);
-      change(d, this);
     });
-    console.log(g);
-    var change = function(d, i) {
-      console.log(d);
+
 
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
       //   .attr("d", arcOver)
-    };
+
   // document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
   
 });
