@@ -95,6 +95,10 @@ $.get( "/api/userdata", function( userData ) {
     .on("click", function(d) {
       console.log("clicked!");
       console.log(d);
+      var angle = 90 - ((d.startAngle * (180 / Math.PI)) + ((d.endAngle - d.startAngle) * (180 / Math.PI) / 2))
+      svg.transition()
+        .duration(1000)
+        .attr("transform", "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")")
       // D3 Table target .d3table ******************************************************
       $('.text-container').hide();
       $('#segmentTitle').replaceWith('<h1 id="segmentTitle">' + d.data.category + ": " + d.data.price + '</h1>');
@@ -105,13 +109,7 @@ $.get( "/api/userdata", function( userData ) {
     console.log(g);
     var change = function(d, i) {
       console.log(d);
-      var angle = 90 - ((d.startAngle * (180 / Math.PI)) + ((d.endAngle - d.startAngle) * (180 / Math.PI) / 2))
-      svg.transition()
-        .duration(1000)
-        .attr("transform", "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")")
-      d3.selectAll("path")
-        .transition()
-        .attr("d", arc)
+
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
