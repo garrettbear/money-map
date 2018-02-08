@@ -104,17 +104,69 @@ $.get( "/api/userdata", function( userData ) {
       $('#segmentTitle').replaceWith('<h3 id="segmentTitle">' + d.data.category + ": $" + d.data.price + '</h3>');
       $('#')
       $('.text-container').fadeIn(400);
-      change(d, this);
+      $("#tb_display tr").remove();
+
+      for(let i = 0; i< userData.length; i++){
+        userData[i].price = parseFloat(userData[i].price);
+        if(d.data.category == userData[i].category){
+          var table = document.createElement("table")
+          console.log(userData)
+          var tr = document.createElement("tr")
+          var td1 = document.createElement("td")
+          var td2 = document.createElement("td")
+          var td3 = document.createElement("td")
+          var td4 = document.createElement("td")
+          var text1 = document.createTextNode(userData[i].createdAt)
+    
+          var text2 = document.createTextNode(userData[i].category)
+          var text3 = document.createTextNode(userData[i].comment)
+          var text4 = document.createTextNode(userData[i].price)
+          td1.appendChild(text1)
+          td2.appendChild(text2)
+          td3.appendChild(text3)
+          td4.appendChild(text4)
+          tr.appendChild(td1)
+          tr.appendChild(td2)
+          tr.appendChild(td3)
+          tr.appendChild(td4)
+        }
+      }
+      
+     
+        $("#tb_display").append(tr)
     });
-    console.log(g);
-    var change = function(d, i) {
-      console.log(d);
+
+    var table = document.createElement("table")
+    console.log(userData)
+    for(let i = 0; i< userData.length; i++){
+      userData[i].price = parseFloat(userData[i].price);
+      // console.log((userData));
+      // console.log(d.data.category)
+      var tr = document.createElement("tr")
+      var td1 = document.createElement("td")
+      var td2 = document.createElement("td")
+      var td3 = document.createElement("td")
+      var td4 = document.createElement("td")
+      var text1 = document.createTextNode(userData[i].createdAt)
+      var text2 = document.createTextNode(userData[i].category)
+      var text3 = document.createTextNode(userData[i].comment)
+      var text4 = document.createTextNode(userData[i].price)
+      td1.appendChild(text1)
+      td2.appendChild(text2)
+      td3.appendChild(text3)
+      td4.appendChild(text4)
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      tr.appendChild(td4)
+      $("#tb_display").append(tr)
+    }
 
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
       //   .attr("d", arcOver)
-    };
+  
   // document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
   
 });
