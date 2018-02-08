@@ -63,8 +63,8 @@ $.get( "/api/userdata", function( userData ) {
   var color = d3.scale.ordinal()
     // .domain(type(rollupData))
     .domain([1,rollupData.length])
-    .range(["#8A76A6", "#54B5BF", "#8EA65B", "#F27B35", "#3263B7", "#009E4D"]); //
-
+    .range(["#FF4545", "#7F2FF0", "#F956E9", "#2FD9F0", "#FFFE6F", "#8CFAEB", "#76FF6F", "#2F9CF0", "#4353F7", "#F7BD23", "#F02F7B", "#02E2C5"]); //
+    
   var arc = d3.svg.arc()
   .outerRadius(radius - 10)
   .innerRadius(80);
@@ -105,17 +105,81 @@ $.get( "/api/userdata", function( userData ) {
         .attr("transform", "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")")
       // D3 Table target .d3table ******************************************************
       $('.text-container').hide();
-      $('#segmentTitle').replaceWith('<h1 id="segmentTitle">' + d.data.category + ": " + d.data.price + '</h1>');
+      $('#segmentTitle').replaceWith('<h3 id="segmentTitle">' + d.data.category + ": $" + d.data.price + '</h3>');
       $('#')
       $('.text-container').fadeIn(400);
+<<<<<<< HEAD
     });
 
+=======
+      $("#tb_display tr").remove();
+
+      for(let i = 0; i< userData.length; i++){
+        userData[i].price = parseFloat(userData[i].price);
+        if(d.data.category == userData[i].category){
+          var table = document.createElement("table")
+          console.log(userData)
+          var tr = document.createElement("tr")
+          var td1 = document.createElement("td")
+          var td2 = document.createElement("td")
+          var td3 = document.createElement("td")
+          var td4 = document.createElement("td")
+          var text1 = document.createTextNode(userData[i].createdAt)
+    
+          var text2 = document.createTextNode(userData[i].category)
+          var text3 = document.createTextNode(userData[i].comment)
+          var text4 = document.createTextNode(userData[i].price)
+          td1.appendChild(text1)
+          td2.appendChild(text2)
+          td3.appendChild(text3)
+          td4.appendChild(text4)
+          tr.appendChild(td1)
+          tr.appendChild(td2)
+          tr.appendChild(td3)
+          tr.appendChild(td4)
+        }
+      }
+      
+     
+        $("#tb_display").append(tr)
+    });
+
+    var table = document.createElement("table")
+    console.log(userData)
+    for(let i = 0; i< userData.length; i++){
+      userData[i].price = parseFloat(userData[i].price);
+      // console.log((userData));
+      // console.log(d.data.category)
+      var tr = document.createElement("tr")
+      var td1 = document.createElement("td")
+      var td2 = document.createElement("td")
+      var td3 = document.createElement("td")
+      var td4 = document.createElement("td")
+      var text1 = document.createTextNode(userData[i].createdAt)
+      var text2 = document.createTextNode(userData[i].category)
+      var text3 = document.createTextNode(userData[i].comment)
+      var text4 = document.createTextNode(userData[i].price)
+      td1.appendChild(text1)
+      td2.appendChild(text2)
+      td3.appendChild(text3)
+      td4.appendChild(text4)
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      tr.appendChild(td4)
+      $("#tb_display").append(tr)
+    }
+>>>>>>> bc5a5faca1d4a4824a987e5f50706734469feff9
 
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
       //   .attr("d", arcOver)
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> bc5a5faca1d4a4824a987e5f50706734469feff9
   // document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
   
 });

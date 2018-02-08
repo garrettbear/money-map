@@ -1,65 +1,42 @@
-<div class="container">
-  <div class="row card-content">
-    <h4 class="center-align">CREATE ACCOUNT</h4>
-    <div class="s12 col">
-      <form id="signup" name="signup" method="post" action="/signup">
-
-        <input class="text" type="text" name="fname">
-        <label for="fname">First Name</label>
-
-        <input class="text" type="text" name="lname">
-        <label for="lname">Last Name</label>
-
-        <input class="text" name="username" type="text" />
-        <label for="username">Username</label>
-
-        <input name="password" type="password" />
-        <label for="password">Password</label>
-
-        <input name="password2" type="password" />
-        <label for="password2">Re-Type Password</label>
-        <br>
-        <br>
-        <input class="btn-large" type="submit" value="Sign Up" />
-      </form>
-    </div>
-  </div>
-</div>
-
-
-{{!-- 
-<div class="card-content">
-  <div class="row">
-    <h4 class="center-align">CREATE ACCOUNT</h4>
-    <form id="signup" name="signup" method="post" action="/signup" class="col s12">
+<div class="row card-content">
+  <h4 class="center-align">CREATE ACCOUNT</h4>
+  <div class="s12 col">
+    <form id="signup" name="signup" method="post" action="/signup">
       <div class="row">
         <div class="input-field col s12">
-          <input id="fname" type="text" class="validate">
           <label for="fname">First Name</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="lname" type="text" class="validate">
-          <label for="lname">Last Name</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
-          <label for="username">Username</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="password2" type="password" class="validate">
-          <label for="password2">Re-Type Password</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Make sure both passwords match.</span>
+          <input class="text" type="text" name="fname">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="submit" id="create-account-btn" class="submit btn-large" value="Submit">
+          <label for="lname">Last Name</label>
+          <input class="text" type="text" name="lname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="username">Username</label>
+          <input class="text" name="username" type="text" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="password">Password</label>
+          <input name="password" type="password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="password2">Re-Type Password</label>
+          <input name="password2" type="password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="btn-large" type="submit" value="Sign Up" />
         </div>
       </div>
     </form>
   </div>
-</div> --}}
+</div>
