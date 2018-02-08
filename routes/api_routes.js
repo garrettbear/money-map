@@ -26,7 +26,7 @@ module.exports = function (app, passport) {
             comment: req.body.item_comment,
             UserId: req.user.id
         }).then(function() {
-            res.render('dashboard');
+            res.redirect('/dashboard');
         });
     });
 }
