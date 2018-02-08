@@ -1,0 +1,116 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+.modal{
+  min-height: 600px;
+}
+
+.main-container{
+  min-height: 600px;
+}
+
+#pieChart {
+  /* border: red 1px dotted; */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto
+}
+
+.text-container {
+  /* border: 1px dotted; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#segmentText {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.character-counter {
+  display: none;
+}
+
+#pieChart{
+  cursor: pointer;
+}
+ #segmentTitle {
+  text-transform: capitalize;
+ }
+
+ .edit-expense {
+  padding: 0 15px 0 0;
+ }
+.edit-expense, .delete-expense {
+  color: grey;
+  cursor: pointer;
+}
+
+.edit-expense:hover, .delete-expense:hover {
+  color: black;
+}
+
+.edit-expense:active, .delete-expense:active {
+  color: red;
+}
