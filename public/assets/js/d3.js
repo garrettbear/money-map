@@ -1,24 +1,47 @@
-// var data_V1 = [{
-//   "Type": "A",
-//   "Amount": 250,
-//   "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus vel odio convallis condimentum. Integer ullamcorper ipsum vel dui varius congue. Nulla facilisi. Morbi molestie tortor libero, ac placerat urna mollis ac. Vestibulum id ipsum mauris."
-// }, {
-//   "Type": "B",
-//   "Amount": 1000,
-//   "Description": "In hac habitasse platea dictumst. Curabitur lacus neque, congue ac quam a, sagittis accumsan mauris. Suspendisse et nisl eros. Fusce nulla mi, tincidunt non faucibus vitae, aliquam vel dolor. Maecenas imperdiet, elit eget condimentum fermentum, sem lorem fringilla felis, vitae cursus lorem elit in risus."
-// }, {
-//   "Type": "C",
-//   "Amount": 600,
-//   "Description": "Aenean faucibus, risus sed eleifend rutrum, leo diam porttitor mauris, a eleifend ipsum ipsum ac ex. Nam scelerisque feugiat augue ac porta. Morbi massa ante, interdum sed nulla nec, finibus cursus augue. Phasellus nunc neque, blandit a nunc ut, mattis elementum arcu."
-// }, {
-//   "Type": "D",
-//   "Amount": 1750,
-//   "Description": "Aenean tellus felis, finibus eget placerat nec, ultrices vel elit. Morbi viverra mi ac ornare euismod. Quisque ultrices id nibh aliquam bibendum. Morbi id tortor non magna dictum suscipit. Nunc dolor metus, aliquam vitae felis id, euismod vulputate metus."
-// }];
+//A function for appending the proper rows to the table.
+//=====================================================================================================================================
+  let appendRows = function(userData , i){
+      userData[i].price = parseFloat(userData[i].price);
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+      var td3 = document.createElement("td");
+      var td4 = document.createElement("td");
+      var td5 = document.createElement("td");
+      var text1 = document.createTextNode(userData[i].createdAt);
+      var text2 = document.createTextNode(userData[i].category);
+      var text3 = document.createTextNode(userData[i].comment);
+      var text4 = document.createTextNode(userData[i].price);
+      var text5_1 = document.createTextNode("create");
+      var text5_2 = document.createTextNode("delete");
+      
+      //Adding divs to td5
+      var editDiv = document.createElement("div");
+      var removeDiv = document.createElement("div");
+
+      editDiv.classList.add("material-icons", "edit-expense");
+      removeDiv.classList.add("material-icons", "delete-expense");
+
+      editDiv.appendChild(text5_1);
+      removeDiv.appendChild(text5_2);
+
+      td1.appendChild(text1);
+      td2.appendChild(text2);
+      td3.appendChild(text3);
+      td4.appendChild(text4);
+      td5.appendChild(editDiv);
+      td5.appendChild(removeDiv);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tr.appendChild(td4);
+      tr.appendChild(td5);
+      $("#tb_display").append(tr);
+  }
 
 $.get( "/api/userdata", function( userData ) {
   //Data parsing
-  //====================================================================================
+  //=====================================================================================================================================
   //Makes sure userData.price is a number!
   for(let i = 0; i< userData.length; i++){
     userData[i].price = parseFloat(userData[i].price);
@@ -38,9 +61,20 @@ $.get( "/api/userdata", function( userData ) {
     .map(function(d){
       return { category: d.key, price: d.values};
   });
+  //Reorders rollup so that prices are appropriately shown. 
+  rollupData.sort(function(x, y){
+    return (d3.ascending(x.price, y.price));
+  })
 
+  //Initial Table creation
+  //=====================================================================================================================================
+  for(let i = 0; i< userData.length; i++){
+    appendRows(userData, i);
+  }
 
   //Create Pie graph
+  //=====================================================================================================================================
+
   var width = parseInt(d3.select('#pieChart').style('width'), 10);
   var height = width;
   var radius = (Math.min(width, height) - 15) / 2;
@@ -93,8 +127,6 @@ $.get( "/api/userdata", function( userData ) {
 
     //When one of the sections on the graph is clicked.
     .on("click", function(d) {
-      console.log("clicked!");
-      console.log(d);
       var angle = 90 - ((d.startAngle * (180 / Math.PI)) + ((d.endAngle - d.startAngle) * (180 / Math.PI) / 2))
       svg.transition()
         .duration(1000)
@@ -107,66 +139,19 @@ $.get( "/api/userdata", function( userData ) {
       $("#tb_display tr").remove();
 
       for(let i = 0; i< userData.length; i++){
-        userData[i].price = parseFloat(userData[i].price);
         if(d.data.category == userData[i].category){
-          var table = document.createElement("table")
-          console.log(userData)
-          var tr = document.createElement("tr")
-          var td1 = document.createElement("td")
-          var td2 = document.createElement("td")
-          var td3 = document.createElement("td")
-          var td4 = document.createElement("td")
-          var text1 = document.createTextNode(userData[i].createdAt)
-    
-          var text2 = document.createTextNode(userData[i].category)
-          var text3 = document.createTextNode(userData[i].comment)
-          var text4 = document.createTextNode(userData[i].price)
-          td1.appendChild(text1)
-          td2.appendChild(text2)
-          td3.appendChild(text3)
-          td4.appendChild(text4)
-          tr.appendChild(td1)
-          tr.appendChild(td2)
-          tr.appendChild(td3)
-          tr.appendChild(td4)
+          appendRows(userData, i);
         }
       }
-      
-     
-        $("#tb_display").append(tr)
+           
+        
     });
 
-    var table = document.createElement("table")
-    console.log(userData)
-    for(let i = 0; i< userData.length; i++){
-      userData[i].price = parseFloat(userData[i].price);
-      // console.log((userData));
-      // console.log(d.data.category)
-      var tr = document.createElement("tr")
-      var td1 = document.createElement("td")
-      var td2 = document.createElement("td")
-      var td3 = document.createElement("td")
-      var td4 = document.createElement("td")
-      var text1 = document.createTextNode(userData[i].createdAt)
-      var text2 = document.createTextNode(userData[i].category)
-      var text3 = document.createTextNode(userData[i].comment)
-      var text4 = document.createTextNode(userData[i].price)
-      td1.appendChild(text1)
-      td2.appendChild(text2)
-      td3.appendChild(text3)
-      td4.appendChild(text4)
-      tr.appendChild(td1)
-      tr.appendChild(td2)
-      tr.appendChild(td3)
-      tr.appendChild(td4)
-      $("#tb_display").append(tr)
-    }
 
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
       //   .attr("d", arcOver)
-  
   // document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
   
 });
