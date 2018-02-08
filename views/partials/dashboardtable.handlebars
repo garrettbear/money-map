@@ -1,25 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col s12 m8" id="pieChart"></div>
-    <div id="pieText" class="s12 m4 col text-container">
-      <h5 id="segmentTitle">Select Segment</h5>
+<div class="dashboard-container">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8" id="pieChart"></div>
+      <div id="pieText" class="s12 m4 col text-container">
+        <h5 id="segmentTitle">Select Segment</h5>
+      </div>
     </div>
   </div>
-</div>
-   
-       <table id="table1" class="responsive-table highlight">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Category</th>
-          <th>Comment</th>
-          <th>Item Price</th>
-        </tr>
-      </thead>
 
-      <tbody id="tb_display">
+  <table id="table1" class="responsive-table highlight">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Comment</th>
+        <th>Item Price</th>
+      </tr>
+    </thead>
 
-      {{!-- <tbody>
+    <tbody id="tb_display">
+
+      {{!--
+      <tbody>
         <tr>
           <td>01/12/2018</td>
           <td>Entertainment</td>
@@ -46,10 +48,12 @@
           <td>Lollipop</td>
           <td>$7.00</td> --}}
           <td>
+            {{!-- Nathan -- these need to be created on d3.js with each row item --}}
             <div class="material-icons edit-expense">create</div>
             <div class="material-icons delete-expense">delete</div>
           </td>
         </tr>
       </tbody>
-    </table>
+  </table>
   </div>
+</div>

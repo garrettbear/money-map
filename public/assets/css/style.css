@@ -100,7 +100,7 @@ footer.page-footer {
  }
 
  .edit-expense {
-  padding: 0 15px 0 0;
+  margin: 0 15px 0 0;
  }
 .edit-expense, .delete-expense {
   color: grey;
@@ -113,4 +113,8 @@ footer.page-footer {
 
 .edit-expense:active, .delete-expense:active {
   color: red;
+}
+
+.dashboard-container {
+  margin-bottom: 200px;
 }
