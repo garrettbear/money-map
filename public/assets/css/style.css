@@ -76,7 +76,6 @@ footer.page-footer {
 
 .text-container {
   /* border: 1px dotted; */
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,4 +86,8 @@ footer.page-footer {
   width: 100%;
   padding: 20px;
   text-align: center;
+}
+
+.character-counter {
+  display: none;
 }

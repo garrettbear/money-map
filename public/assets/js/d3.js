@@ -59,8 +59,8 @@ $.get( "/api/userdata", function( userData ) {
   var color = d3.scale.ordinal()
     // .domain(type(rollupData))
     .domain([1,rollupData.length])
-    .range(["#8A76A6", "#54B5BF", "#8EA65B", "#F27B35", "#3263B7", "#009E4D"]); //
-
+    .range(["#FF4545", "#7F2FF0", "#F956E9", "#2FD9F0", "#FFFE6F", "#8CFAEB", "#76FF6F", "#2F9CF0", "#4353F7", "#F7BD23", "#F02F7B", "#02E2C5"]); //
+    
   var arc = d3.svg.arc()
   .outerRadius(radius - 10)
   .innerRadius(80);
