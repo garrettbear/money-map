@@ -2,6 +2,9 @@
 An app that helps promote better self control with spending. Visually stunning graphs that display where most of your money is being spent. 
 
 Here you will learn more about Money Rocket and how to launch this app for yourself. 
+
+![Test if this will work](/public/assets/images/background1.jpg "Test")
+
 #
 
 
@@ -20,6 +23,6 @@ Well hopefully your account isn't empty, but just where did all that money go?
 
 ## 🔥 🔥 🔥
 
-Like Elon Musk, you must have burned up all your money like rocket fuel (hence the name Money Rocket) from the Heavy Falcon.
+Like Elon Musk, you must have burned up all your money like rocket fuel from the Heavy Falcon. (Hence the name Money Rocket)
 
 ![Heavy Falcon](https://media.giphy.com/media/xUOwFXsOiRuzWfi2xq/giphy.gif "The Heavy Falcon Rocket")
