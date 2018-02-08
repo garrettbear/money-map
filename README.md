@@ -95,3 +95,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Awesome work by the team working on MaterializeCSS as it continues to become better and better
 * Special thanks to Drew Hoang for being our instructor talented at UC Irvine: [codentell](https://github.com/codentell)
 
+
+VIEW FINAL PROJECT [HERE] (https://money-rocket.herokuapp.com/)
