@@ -11,7 +11,7 @@ Here you will learn more about Money Rocket and how to launch this app for yours
 
 It's been a long week... you wake up to take a look at your bank account and this is what you see...
 
-![A very low bank account](http://theeconomiccollapseblog.com/wp-content/uploads/2013/04/Bank-Account-Zero-Balance-Posted-by-@EvilJeanyis-to-Twitter.jpg "A very low bank account")
+![A very low bank account](http://cdn1.theodysseyonline.com/files/2016/02/19/635914914275108307-1050090448_Bank-Account-Zero-Balance-Posted-by-@EvilJeanyis-to-Twitter.jpg "A very low bank account")
 
 Well hopefully your account isn't empty, but just where did all that money go?
 
@@ -22,4 +22,4 @@ Well hopefully your account isn't empty, but just where did all that money go?
 
 Like Elon Musk, you must have burned up all your money like rocket fuel (hence the name Money Rocket) from the Heavy Falcon.
 
-![Heavy Falcon](https://giphy.com/embed/xUOwFXsOiRuzWfi2xq "The Heavy Falcon Rocket")
+![Heavy Falcon](https://media.giphy.com/media/xUOwFXsOiRuzWfi2xq/giphy.gif "The Heavy Falcon Rocket")
