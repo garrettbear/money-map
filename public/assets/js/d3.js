@@ -108,10 +108,6 @@ $.get( "/api/userdata", function( userData ) {
       $('#segmentTitle').replaceWith('<h3 id="segmentTitle">' + d.data.category + ": $" + d.data.price + '</h3>');
       $('#')
       $('.text-container').fadeIn(400);
-<<<<<<< HEAD
-    });
-
-=======
       $("#tb_display tr").remove();
 
       for(let i = 0; i< userData.length; i++){
@@ -169,17 +165,11 @@ $.get( "/api/userdata", function( userData ) {
       tr.appendChild(td4)
       $("#tb_display").append(tr)
     }
->>>>>>> bc5a5faca1d4a4824a987e5f50706734469feff9
 
       // d3.select(i)
       //   .transition()
       //   .duration(1000)
       //   .attr("d", arcOver)
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> bc5a5faca1d4a4824a987e5f50706734469feff9
   // document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
   
 });
