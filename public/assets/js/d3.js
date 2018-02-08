@@ -101,7 +101,7 @@ $.get( "/api/userdata", function( userData ) {
         .attr("transform", "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")")
       // D3 Table target .d3table ******************************************************
       $('.text-container').hide();
-      $('#segmentTitle').replaceWith('<h1 id="segmentTitle">' + d.data.category + ": " + d.data.price + '</h1>');
+      $('#segmentTitle').replaceWith('<h3 id="segmentTitle">' + d.data.category + ": $" + d.data.price + '</h3>');
       $('#')
       $('.text-container').fadeIn(400);
       change(d, this);

@@ -91,3 +91,26 @@ footer.page-footer {
 .character-counter {
   display: none;
 }
+
+#pieChart{
+  cursor: pointer;
+}
+ #segmentTitle {
+  text-transform: capitalize;
+ }
+
+ .edit-expense {
+  padding: 0 15px 0 0;
+ }
+.edit-expense, .delete-expense {
+  color: grey;
+  cursor: pointer;
+}
+
+.edit-expense:hover, .delete-expense:hover {
+  color: black;
+}
+
+.edit-expense:active, .delete-expense:active {
+  color: red;
+}
