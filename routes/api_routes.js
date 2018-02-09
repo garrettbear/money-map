@@ -39,8 +39,21 @@ module.exports = function (app, passport) {
             {
                 where: {input_id: req.body.input_id}
             }
-        ).then(function() {
-            res.redirect('/dashboard');
+        ).then(function(dbMoney) {
+            res.json(dbMoney);
+        });
+    });
+    app.delete('/api/delete-item/:id', function(req,res,next){
+        if (req.isAuthenticated()) return next();
+        res.redirect('/#login-tab');
+    },function(req,res){
+        console.log(req.params);
+        db.MoneyData.destroy({
+            where: {
+                input_id: req.params.id
+            }
+        }).then(function(dbMoney) {
+            res.json(dbMoney);
         });
     });
 }
