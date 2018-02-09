@@ -18,7 +18,7 @@ $(document).ready(function(){
         var text1 = document.createTextNode(userData[i].createdAt);
         var text2 = document.createTextNode(userData[i].category);
         var text3 = document.createTextNode(userData[i].comment);
-        var text4 = document.createTextNode(userData[i].price);
+        var text4 = document.createTextNode("$" + userData[i].price);
         var text5_1 = document.createTextNode("create");
         var text5_2 = document.createTextNode("delete");
         
@@ -55,10 +55,16 @@ $(document).ready(function(){
     //Data parsing
     //=====================================================================================================================================
     //Makes sure userData.price is a number!
-    for(let i = 0; i< userData.length; i++){
-      userData[i].price = parseFloat(userData[i].price);
+    if (userData.length == 0){
+      alert("no data")
+      console.log(name)
+    } else {
+      for(let i = 0; i< userData.length; i++){
+        userData[i].price = parseFloat(userData[i].price);
+      }
+      console.log((userData));
     }
-    console.log((userData));
+    
 
     //Rollups all data of same category
     var rollupData = d3.nest()

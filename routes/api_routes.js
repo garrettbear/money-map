@@ -16,7 +16,7 @@ module.exports = function (app, passport) {
     });
     app.post('/submit-item', function(req,res,next){
         if (req.isAuthenticated()) return next();
-        res.redirect('/#login-tab');
+        res.redirect('/login');
     }, function(req,res){
         console.log(req);
         db.MoneyData.create(
@@ -31,7 +31,7 @@ module.exports = function (app, passport) {
     });
     app.put('/api/edit-item', function(req,res,next){
         if (req.isAuthenticated()) return next();
-        res.redirect('/#login-tab');
+        res.redirect('/login');
     },function(req,res){
         console.log(req.body);
         db.MoneyData.update(
@@ -45,7 +45,7 @@ module.exports = function (app, passport) {
     });
     app.delete('/api/delete-item/:id', function(req,res,next){
         if (req.isAuthenticated()) return next();
-        res.redirect('/#login-tab');
+        res.redirect('/login');
     },function(req,res){
         console.log(req.params);
         db.MoneyData.destroy({

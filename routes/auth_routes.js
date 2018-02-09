@@ -19,11 +19,11 @@ module.exports = function (app, passport) {
   
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/dashboard',
-    failureRedirect: '/#create-account-tab'
+    failureRedirect: '/signup'
   }));
   app.post('/signin', passport.authenticate('local-signin', {
     successRedirect: '/dashboard',
-    failureRedirect: '/#login-tab'
+    failureRedirect: '/login'
     }
   ));
 }

@@ -101,7 +101,7 @@ footer.page-footer {
 #pieChart{
   cursor: pointer;
 }
- #segmentTitle {
+ #segmentTitle, td {
   text-transform: capitalize;
  }
 
@@ -121,7 +121,7 @@ footer.page-footer {
   color: red;
 }
 
-.dashboard-container {
+.main-container {
   margin-bottom: 200px;
 }
 
