@@ -158,7 +158,8 @@ $(document).ready(function(){
 
     // Table listeners and functions
     // =====================================================================================================================================
-  
+    
+    //Edit Listeners
     $(document).on('click', '.edit-expense', function(e){
       var currentEle;
       for(let i = 0; i< userData.length; i++){
@@ -185,18 +186,29 @@ $(document).ready(function(){
         url: "/api/edit-item",
         data: data
       }).then(function(){
-        console.log("update success");
+        window.location.href = "/dashboard";
       });
     });
 
-    // $(document).on('click','.delete-expense', function(e){
-    //   var currentEle;
-    //   for(let i = 0; i< userData.length; i++){
-    //     if(parseInt($(this).data('id')) === userData[i].input_id){
-    //       currentEle = userData[i];
-    //     }
-    //   }
-    // });
+    //Deleting Listeners
+    $(document).on('click','.delete-expense', function(e){
+      var currentEle;
+      for(let i = 0; i< userData.length; i++){
+        if(parseInt($(this).data('id')) === userData[i].input_id){
+          currentEle = userData[i];
+        }
+      }
+      $('#confirm_delete').data('id', currentEle.input_id);
+    });
+    $('#confirm_delete').on('click', function(e){
+      console.log($(this).data('id'));
+      $.ajax({
+        method: "DELETE",
+        url: "/api/delete-item/" + $(this).data('id')
+      }).then(function(response){
+        window.location.href = "/dashboard";
+      });
+    });
 
         // d3.select(i)
         //   .transition()
