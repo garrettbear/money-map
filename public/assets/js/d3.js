@@ -56,8 +56,7 @@ $(document).ready(function(){
     //=====================================================================================================================================
     //Makes sure userData.price is a number!
     if (userData.length == 0){
-      alert("no data")
-      console.log(name)
+      alert("no data");
     } else {
       for(let i = 0; i< userData.length; i++){
         userData[i].price = parseFloat(userData[i].price);
