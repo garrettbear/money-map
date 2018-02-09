@@ -25,22 +25,17 @@ $(document).ready(function(){
         //Adding divs to td5
         var editDiv = document.createElement("div");
         var removeDiv = document.createElement("div");
-        var editAref = document.createElement("div");
-        var removeAref = document.createElement("div");
 
-        editAref.classList.add("material-icons", "edit-expense", "modal-trigger");
-        removeAref.classList.add("material-icons", "delete-expense", "modal-trigger");
+        editDiv.classList.add("material-icons", "edit-expense", "modal-trigger");
+        removeDiv.classList.add("material-icons", "delete-expense", "modal-trigger");
 
-        editAref.setAttribute('data-id', userData[i].input_id);
-        editAref.setAttribute('href', '#edit-expense')
-        removeAref.setAttribute('data-id', userData[i].input_id);
-        removeAref.setAttribute('href', '#delete-expense');
+        editDiv.setAttribute('data-id', userData[i].input_id);
+        editDiv.setAttribute('href', '#edit-expense')
+        removeDiv.setAttribute('data-id', userData[i].input_id);
+        removeDiv.setAttribute('href', '#delete-expense');
 
-        editAref.appendChild(text5_1);
-        removeAref.appendChild(text5_2);
-
-        editDiv.appendChild(editAref);
-        removeDiv.appendChild(removeAref);
+        editDiv.appendChild(text5_1);
+        removeDiv.appendChild(text5_2);
 
         td1.appendChild(text1);
         td2.appendChild(text2);
@@ -193,6 +188,7 @@ $(document).ready(function(){
         console.log("update success");
       });
     });
+
     // $(document).on('click','.delete-expense', function(e){
     //   var currentEle;
     //   for(let i = 0; i< userData.length; i++){
