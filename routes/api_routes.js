@@ -18,7 +18,7 @@ module.exports = function (app, passport) {
         if (req.isAuthenticated()) return next();
         res.redirect('/#login-tab');
     }, function(req,res){
-        // console.log(req.body);
+        console.log(req);
         db.MoneyData.create(
         { 
             price: req.body.amount,
@@ -26,6 +26,20 @@ module.exports = function (app, passport) {
             comment: req.body.item_comment,
             UserId: req.user.id
         }).then(function() {
+            res.redirect('/dashboard');
+        });
+    });
+    app.put('/api/edit-item', function(req,res,next){
+        if (req.isAuthenticated()) return next();
+        res.redirect('/#login-tab');
+    },function(req,res){
+        console.log(req.body);
+        db.MoneyData.update(
+            req.body,
+            {
+                where: {input_id: req.body.input_id}
+            }
+        ).then(function() {
             res.redirect('/dashboard');
         });
     });
