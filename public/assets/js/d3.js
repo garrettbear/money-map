@@ -56,7 +56,8 @@ $(document).ready(function(){
     //=====================================================================================================================================
     //Makes sure userData.price is a number!
     if (userData.length == 0){
-      alert("no data");
+      // This needs to be cleaned up but good for demo day
+      welcomeMessage();
     } else {
       for(let i = 0; i< userData.length; i++){
         userData[i].price = parseFloat(userData[i].price);
@@ -226,3 +227,9 @@ $(document).ready(function(){
 });
 /*var color = d3.scale.category20();
 color.domain(type(data))*/
+
+// Temporary fix to show message when no data is input for demo day
+
+var welcomeMessage = function(){
+  document.getElementById("welcome-message").innerHTML = "<div class='s12 col center'><h5>Welcome to Money Rocket.<br>Input your first expense here to get things started.</h5></div><br><div class='row center'><a href='#submit-expense' class='btn-large modal-trigger waves-effect waves-light pink lighten-2'>Submit First Expense</a></div>"
+};
