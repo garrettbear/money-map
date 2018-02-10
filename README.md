@@ -41,6 +41,8 @@ Like Elon Musk, you must have burned up all your money like rocket fuel from the
  * Be sure to add the price, mark category, and leave a brief comment about your expense.
  4. See the magic happen as the Money Rocket creates a visually stunning pie chart showing your expenses.
 
+ ![Money Rocket Graph](/public/assets/images/money-rocket-graph.jpg "Money Rocket Graph")
+
 #
 
 
